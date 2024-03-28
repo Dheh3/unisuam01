@@ -1,7 +1,0 @@
-{
-  "name": "unisuam01",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
