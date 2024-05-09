@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Feed
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Feed</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  
+  <ion-card color="dark" *ngFor="let movie of topMovie.data"> 
+    <img alt="Silhouette of mountains" [src]="objetoCard.imagem" />
+    <ion-card-header>
+      <ion-card-title class="ion-text-center t">{{objetoCard.titulo}}</ion-card-title>
+      <ion-card-subtitle class="ion-text-center">{{objetoCard.subtitulo}}</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content class="ion-text-center">
+      {{objetoCard.conteudo}}
+    </ion-card-content>
+  </ion-card>
+
+  <app-explore-container name="Tab 2 page"></app-explore-container>
+</ion-content>
