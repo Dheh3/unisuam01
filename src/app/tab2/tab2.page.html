@@ -12,19 +12,19 @@
       <ion-title size="large">Feed</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   
-  
-  <ion-card color="dark" *ngFor="let movie of topMovie.data"> 
-    <img alt="Silhouette of mountains" [src]="objetoCard.imagem" />
-    <ion-card-header>
-      <ion-card-title class="ion-text-center t">{{objetoCard.titulo}}</ion-card-title>
-      <ion-card-subtitle class="ion-text-center">{{objetoCard.subtitulo}}</ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-card-content class="ion-text-center">
-      {{objetoCard.conteudo}}
+  <ion-card *ngFor="let filme of lista" color="secondary">
+    <img src="{{capa}}.{{filme.backdrop_path}}" alt="">
+    <ion-card-title class="ion-padding">{{filme.title}}</ion-card-title>
+
+    <ion-card-content>
+      {{filme.overview}}
     </ion-card-content>
   </ion-card>
-
+  
   <app-explore-container name="Tab 2 page"></app-explore-container>
 </ion-content>
